@@ -51,6 +51,9 @@ And it should copy the systemd service file.
 
 ### Manual
 
+If that doesn't work 
+`git clone --depth=1 https://github.com/madprops/clipton && cd clipton && pipx install . --force`
+
 Clone this repo somewhere:
 
 `git clone --depth=1 https://github.com/madprops/clipton`
