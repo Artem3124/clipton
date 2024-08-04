@@ -98,6 +98,11 @@ class Settings:
   # Icon to use for items with multiple lines
   multi_icon: str = "🔴"
 
+  #Path to the .rasi stylesheet
+  rofi_style: str = ""
+
+  # TODO: Enable parsing endless rofi options to the startup
+
   # Read the settings file
   @staticmethod
   def read() -> None:
@@ -426,7 +431,8 @@ class Rofi:
   @staticmethod
   def style() -> str:
     return f'-me-select-entry "" -me-accept-entry "MousePrimary"' \
-    f' -theme-str "window {{width: calc(100% min {Settings.rofi_width});}}"'
+    f' -theme-str "window {{width: calc(100% min {Settings.rofi_width});}}"' \
+    f'' if not Settings.rofi_style else f'-theme {Settings.rofi_style}'
 
   # Get a Rofi prompt
   @staticmethod
